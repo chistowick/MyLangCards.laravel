@@ -131,7 +131,7 @@ function fillEditForm() {
 // Submit the edited card form to the server
 function submitEditedCard() {
 
-    let url = 'http://mycards.laravel/ajax/edit-card';
+    let url = 'http://mylangcards.laravel/ajax/edit-card';
 
     // Получаем защитный токен Laravel из скрытого input
     let laravelToken = document.querySelector('input[name="_token"]').value;

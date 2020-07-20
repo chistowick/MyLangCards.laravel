@@ -17,7 +17,7 @@ let activeStackNumber;
 // Request all cards from the table
 function getCards() {
 
-    let url = 'http://mycards.laravel/ajax/get-cards';
+    let url = 'http://mylangcards.laravel/ajax/get-cards';
     
     // Получаем защитный токен Laravel из скрытого input
     let laravelToken = document.querySelector('input[name="_token"]').value;

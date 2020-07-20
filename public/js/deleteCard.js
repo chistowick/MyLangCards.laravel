@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 function deleteCard() {
 
-    let url = 'http://mycards.laravel/ajax/delete-card';
+    let url = 'http://mylangcards.laravel/ajax/delete-card';
 
     // Получаем защитный токен Laravel из скрытого input
     let laravelToken = document.querySelector('input[name="_token"]').value;

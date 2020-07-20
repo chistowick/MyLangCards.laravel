@@ -59,7 +59,7 @@ function moveCard(oldStack, newStack) {
         return;
     }
 
-    let url = 'http://mycards.laravel/ajax/move-card';
+    let url = 'http://mylangcards.laravel/ajax/move-card';
 
     // Получаем защитный токен Laravel из скрытого input
     let laravelToken = document.querySelector('input[name="_token"]').value;

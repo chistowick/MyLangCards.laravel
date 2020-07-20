@@ -95,7 +95,7 @@ $(document).ready(function () {
 // Submit a new card form to the server
 function submitNewCard() {
 
-    let url = 'http://mycards.laravel/ajax/add-card';
+    let url = 'http://mylangcards.laravel/ajax/add-card';
 
     // Получаем защитный токен Laravel из скрытого input
     let laravelToken = document.querySelector('input[name="_token"]').value;
