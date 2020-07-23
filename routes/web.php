@@ -43,7 +43,43 @@ Route::post('ajax/delete-card', 'AjaxController@deleteCard');
 Route::post('ajax/move-card', 'AjaxController@moveCard');
 
 // Группа маршрутов для аутентификации
-Auth::routes();
+// Auth::routes();
+
+// Кастомизированная группа маршрутов аутентификации, верификации и проч:
+
+// Login Routes...
+// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login'); // Sign in
+Route::post('login', 'Auth\LoginController@login')->name('login-post');
+
+// Logout Routes...
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register'); // Sign up
+Route::post('register', 'Auth\RegisterController@register')->name('register-post');
+
+// // Password Reset Routes...
+// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email'); // Отправка на email ссылки для сброса пароля
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset'); // Проверка токена и показ формы на reset пароля
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update'); // Обновить пароль
+
+// (GET) Запрос пароля пользователя, перед тем как дать ему доступ к чему-то важному 
+// (POST) - обработка ответа пользователя
+// // Route::get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
+// // Route::post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
+
+// Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+// Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
+// Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+
+
+
+
+
+
+
 
 // Маршрут, который загружается HomeController'ом, в тот момент когда пользователь авторизовался
 Route::get('/home', 'HomeController@index')->name('home');
