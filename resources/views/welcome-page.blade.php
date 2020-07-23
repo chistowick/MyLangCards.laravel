@@ -3,7 +3,7 @@
 @section('leftArea')
 <div id="leftAreaWelcome">
     <!-- Форма входа Sign in -->
-    <form method="POST" action="{{ route('login') }}" id="sign-in-form">
+    <form method="POST" action="{{ route('login-post') }}" id="sign-in-form">
         @csrf
 
         <!-- Email div -->
@@ -48,16 +48,20 @@
         <div>
             <div>
                 <button type="submit">Login</button>
-                <a class="btn btn-link" href="{{ route('password.request') }}">
-                Forgot Your Password?
-            </a>
+
+                <a class="btn btn-link" href="/" onclick="event.preventDefault(); 
+                document.getElementById('forgot-password-div').style.display = 'block';
+                document.getElementById('sign-in-form').style.display = 'none';
+                document.getElementById('sign-up-form').style.display = 'none';">
+                    Forgot Your Password?
+                </a>
             </div>
         </div>
 
     </form>
 
     <!-- Форма регистрации нового пользователя Sign up-->
-    <form method="POST" action="{{ route('register') }}" id="sign-up-form">
+    <form method="POST" action="{{ route('register-post') }}" id="sign-up-form"> 
         @csrf
 
         <!-- Name div -->
@@ -121,6 +125,40 @@
         </div>
 
     </form>
+
+    <!-- Форма запроса ссылки на сброс пароля 'forgot-password-form'-->
+    <div id="forgot-password-div">
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @endif
+
+        <form method="POST" action="{{ route('password.email') }}">
+            @csrf
+
+            <label for="email">E-Mail Address</label>
+
+            <div>
+                <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div>
+                <div>
+                    <button type="submit">
+                        Send Password Reset Link
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
 </div>
 
 @endsection

@@ -26,10 +26,12 @@
             <p>Sign up! It’s Free</p>
             <a href="/" id="sign-in-show" onclick="event.preventDefault(); 
                 document.getElementById('sign-in-form').style.display = 'block';
+                document.getElementById('forgot-password-div').style.display = 'none';
                 document.getElementById('sign-up-form').style.display = 'none';">Sign in
             </a>
             <a href="/" id="sign-up-show" onclick="event.preventDefault(); 
                 document.getElementById('sign-in-form').style.display = 'none';
+                document.getElementById('forgot-password-div').style.display = 'none';
                 document.getElementById('sign-up-form').style.display = 'block';">Sign up</a>
 
             @endguest
