@@ -48,7 +48,7 @@ body {
     font-size: 200%;
 }
 
-#sign-up-form {
+#sign-up-form, #forgot-password-div {
     display: none;
 }
 
