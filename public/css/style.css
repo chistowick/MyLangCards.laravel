@@ -1,18 +1,17 @@
-body {
+html {
     font-family: "Trebuchet MS", Verdana;
+}
+
+body {
     background-color: beige;
     margin: 0px;
     padding: 0px;
-    min-width: 1300px;
-    height:100%;
-    width:100%;
+    /* height:100%;
+    width:100%; */
 }
 
 #header {
     background-color: lightskyblue;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
     min-height: 100px;
 }
 
@@ -20,8 +19,6 @@ body {
     text-align: center;
     margin: 0px;
     padding: 5px 0px 30px 0px;
-    box-sizing: border-box;
-    width: 30%;
     min-height: 100px;
     border-right: solid 2px;
     border-color: white;
@@ -30,7 +27,6 @@ body {
 .authentication a {
     color: blue;
     text-align: center;
-    box-sizing: border-box;
     display: inline-block;
     padding: 10px;
     width: 40%;
@@ -48,46 +44,23 @@ body {
     font-size: 200%;
 }
 
-#sign-up-form, #forgot-password-div {
+#sign-up-div, #forgot-password-div {
     display: none;
 }
 
 #middle-part {
-    display: flex;
-    width: 100%;
-    height: 100%;
     border-bottom: solid 2px;
     border-color: lightskyblue;
 }
 
-#leftArea{
-    display: flex;
-    -moz-flex-direction: column;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    min-height: 500px;
-    
-    padding: 100px 60px 50px 60px;
-    box-sizing: border-box !important;
-    width: 30%;
-    background-color: white;
-    border-right: solid 2px;
-    border-color: lightskyblue;
-}
-
-#leftAreaWelcome{
-    box-sizing: border-box !important;
-    min-height: 500px;
-    width: 30%;
+#leftArea {
+    min-height: 400px;
     background-color: white;
     border-right: solid 2px;
     border-color: lightskyblue;
 }
 
 .cards {
-    box-sizing: border-box !important;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
@@ -119,21 +92,11 @@ body {
 }
 
 #rightArea {
-    box-sizing: border-box !important;
-    width: 70%;
-    min-height: 400px;
-    background-color: white;
-}
-
-#rightAreaWelcome {
-    box-sizing: border-box !important;
-    width: 70%;
     min-height: 400px;
     background-color: white;
 }
 
 #menuOptions{
-    box-sizing: border-box !important;
     width: 100%;
     background-color: white;
     padding: 0px;
@@ -159,7 +122,6 @@ p.buttons-row {
 
 #search {
     width: 40%;
-    box-sizing: border-box !important;
     background-color: lightblue;
 }
 
@@ -180,14 +142,12 @@ p.buttons-row {
 
 #front_side_activation {
     width: 15%;
-    box-sizing: border-box !important;
     background-color: #29de29;
     border: 2px solid white;
 }
 
 #back_side_activation {
     width: 15%;
-    box-sizing: border-box !important;
     background-color: lightgray;
     border-right: 2px solid white;
     border-top: 2px solid white;
@@ -196,7 +156,6 @@ p.buttons-row {
 
 #addCard {
     width: 10%;
-    box-sizing: border-box !important;
     background-color: lightgreen;
     border-right: 2px solid white;
     border-top: 2px solid white;
@@ -205,7 +164,6 @@ p.buttons-row {
 
 #editCard {
     width: 10%;
-    box-sizing: border-box !important;
     background-color: gray;
     border-right: 2px solid white;
     border-top: 2px solid white;
@@ -214,7 +172,6 @@ p.buttons-row {
 
 #deleteCard {
     width: 10%;
-    box-sizing: border-box !important;
     background-color: maroon;
     color: white;
     border-right: none;
@@ -261,7 +218,6 @@ p.buttons-row {
     background-color: lightgray;
     /*border: 4px solid blue;*/
     box-shadow: 2px 1px 2px 0px black;
-    box-sizing: border-box !important;
     border-radius: 10px;
     text-align: left;
 }
@@ -273,7 +229,6 @@ p.buttons-row {
 
 #input-orig, #input-transl {
     width: 100%;
-    box-sizing: border-box;
     margin-left: 10px;
     padding: 6px;
     border: 2px solid darkgray;
@@ -281,7 +236,6 @@ p.buttons-row {
 }
 
 textarea {
-    box-sizing: border-box;
     width: 100%;
     padding: 6px;
     margin-top: 15px;
@@ -423,12 +377,5 @@ textarea:focus{
 
 #footer{
     min-height: 40px;
-    width: 100%;
     background: linear-gradient(to top left, #423400, #03da03);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    font-family: "Trebuchet MS", Verdana;
-    font-style: italic;
-    font-size: 100%;
 }
