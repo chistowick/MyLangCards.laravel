@@ -20,62 +20,62 @@
 
 <body>
 
-    <div class="container-fluid" id="header">
-        <div class="row">
-            <div class="col-4 authentication">
+    <div class="container-fluid p-0" id="header">
+        <div class="row no-gutters">
+            <div class="col-md-4 authentication">
                 <!-- Блок с приветствием и кнопками Sign in/Sign up -->
-                    @guest
+                @guest
 
-                    <p>Sign up! It’s Free</p>
-                    <a href="/" id="sign-in-show" onclick="event.preventDefault(); 
-                    document.getElementById('sign-in-div').style.display = 'block';
-                    document.getElementById('forgot-password-div').style.display = 'none';
-                    document.getElementById('sign-up-div').style.display = 'none';">Sign in
-                    </a>
-                    <a href="/" id="sign-up-show" onclick="event.preventDefault(); 
-                    document.getElementById('sign-in-div').style.display = 'none';
-                    document.getElementById('forgot-password-div').style.display = 'none';
-                    document.getElementById('sign-up-div').style.display = 'block';">Sign up</a>
+                <p>Sign up! It’s Free</p>
+                <a href="{{ route('login') }}" id="sign-in-show">Sign in
+                </a>
+                <a href="{{ route('register') }}" id="sign-up-show">Sign up</a>
 
-                    @endguest
+                @endguest
 
-                    @auth
+                @auth
 
-                    <!-- Logout -->
-                    <p>Hello, {{ Auth::user()->name }}</p>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                <!-- Logout -->
+                <p>Hello, {{ Auth::user()->name }}</p>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); 
                     document.getElementById('logout-form').submit();">Logout
-                    </a>
+                </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
 
-                    @endauth
+                @endauth
             </div>
 
-            <div class="col-8 text-center">
+            <div class="col-md-8 order-first order-md-last text-center">
                 <h1 style="color: white; margin-top: 3rem;">Здесь будет название и логотип сайта</h1>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid" id="middle-part">
+    <div class="container-fluid p-0" id="middle-part">
 
-        <div class="row">
-            <div class="col-4" id="leftArea">
+        <div class="row no-gutters">
+            <div class="col-md-4" id="leftArea">
                 @yield('leftArea')
             </div>
-            <div class="col-8" id="rightArea">
+            <div class="col-md-8" id="rightArea">
+                @auth
                 @yield('rightArea')
+                @endauth
+
+                @guest
+                @include('slider')
+                @endguest
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <div class="container-fluid" id="footer">
+    <div class="container-fluid p-0" id="footer">
         <div class="row justify-content-center">
-            <div class="col text-center">
+            <div class="col-6 text-center pt-4">
                 <p id="copy">&copy; 2020 Анатолий Чиняев</p>
             </div>
         </div>

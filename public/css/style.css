@@ -18,7 +18,7 @@ body {
 .authentication {
     text-align: center;
     margin: 0px;
-    padding: 5px 0px 30px 0px;
+    padding: 2.3rem 0rem 1.8rem 0rem;
     min-height: 100px;
     border-right: solid 2px;
     border-color: white;
@@ -44,17 +44,12 @@ body {
     font-size: 200%;
 }
 
-#sign-up-div, #forgot-password-div {
-    display: none;
-}
-
 #middle-part {
     border-bottom: solid 2px;
     border-color: lightskyblue;
 }
 
 #leftArea {
-    min-height: 400px;
     background-color: white;
     border-right: solid 2px;
     border-color: lightskyblue;

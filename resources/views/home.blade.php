@@ -1,19 +1,19 @@
 @extends('layouts.main')
 
 @section('leftArea')
-
-<div id="leftArea">
-    <div id="stack_1" class="cards stack_switch">
-        <p>stack_1</p>
-    </div>
-    <div id="stack_2" class="cards stack_switch">
-        <p>stack_2</p>
-    </div>
-    <div id="stack_3" class="cards stack_switch">
-        <p>stack_3</p>
+<div class="row justify-content-center">
+    <div class="col-10 col-md-8">
+        <div id="stack_1" class="cards stack_switch">
+            <p>stack_1</p>
+        </div>
+        <div id="stack_2" class="cards stack_switch">
+            <p>stack_2</p>
+        </div>
+        <div id="stack_3" class="cards stack_switch">
+            <p>stack_3</p>
+        </div>
     </div>
 </div>
-
 @endsection
 
 @section('rightArea')
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="form_add_card" class="cards">
             <div id="orig-part-form">
                 <div class="input-new-card flex-form-part"><label for="input-orig">Оriginal: </label>
