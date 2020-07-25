@@ -16,16 +16,8 @@ use Illuminate\Support\Facades\Auth;
 
 // Маршрут к стартовой странице
 Route::get('/', function () {
-
-    // Если пользователь авторизован, показываем домашнюю страницу, иначе - приветственную
-    if (Auth::check()) {
-
-        return view('home');
-    } else {
-
-        return view('welcome-page');
-    }
-})->name('welcome');
+    return view('auth.login');
+});
 
 // Маршрут для получения списка всех доступных пользователю карточек
 Route::post('ajax/get-cards', 'AjaxController@getCards');
@@ -48,18 +40,18 @@ Route::post('ajax/move-card', 'AjaxController@moveCard');
 // Кастомизированная группа маршрутов аутентификации, верификации и проч:
 
 // Login Routes...
-// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login'); // Sign in
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login'); // Sign in
 Route::post('login', 'Auth\LoginController@login')->name('login-post');
 
 // Logout Routes...
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-// Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register'); // Sign up
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register'); // Sign up
 Route::post('register', 'Auth\RegisterController@register')->name('register-post');
 
 // // Password Reset Routes...
-// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email'); // Отправка на email ссылки для сброса пароля
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset'); // Проверка токена и показ формы на reset пароля
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update'); // Обновить пароль
