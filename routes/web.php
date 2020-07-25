@@ -16,8 +16,16 @@ use Illuminate\Support\Facades\Auth;
 
 // Маршрут к стартовой странице
 Route::get('/', function () {
-    return view('auth.login');
-});
+
+    // Если пользователь авторизован, показываем домашнюю страницу, иначе - приветственную
+    if (Auth::check()) {
+
+        return view('home');
+    } else {
+
+        return view('login');
+    }
+})->name('welcome');
 
 // Маршрут для получения списка всех доступных пользователю карточек
 Route::post('ajax/get-cards', 'AjaxController@getCards');
