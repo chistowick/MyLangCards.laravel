@@ -61,13 +61,17 @@
                 @yield('leftArea')
             </div>
             <div class="col-md-8" id="rightArea">
-                @auth
-                @yield('rightArea')
-                @endauth
 
-                @guest
+                @hasSection('rightArea')
+
+                @yield('rightArea')
+
+                @else
+
                 @include('slider')
-                @endguest
+
+                @endif
+
             </div>
         </div>
     </div>
