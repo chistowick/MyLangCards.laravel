@@ -23,7 +23,7 @@ Route::get('/', function () {
         return view('home');
     } else {
 
-        return view('login');
+        return view('auth.login');
     }
 })->name('welcome');
 
