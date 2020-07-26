@@ -79,7 +79,7 @@
     <!-- Footer -->
     <div class="container-fluid p-0" id="footer">
         <div class="row justify-content-center">
-            <div class="col-6 text-center pt-4">
+            <div class="col text-center pt-4">
                 <p id="copy">&copy; 2020 Анатолий Чиняев</p>
             </div>
         </div>
@@ -90,8 +90,11 @@
     <!-- JQuery и прочее из стандартного набора Laravel -->
     <script src="{{ asset('js/app.js') }}"></script>
 
-    <!-- Other scripts -->
+    <!-- Other scripts if exists -->
+    @hasSection('scripts')
     @yield('scripts')
+    @else
+    @endif
 
 </body>
 
