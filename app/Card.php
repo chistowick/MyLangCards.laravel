@@ -18,5 +18,6 @@ class Card extends Model
         'translation',
         'translationComment',
         'stack',
+        'login',
     ];
 }
