@@ -150,6 +150,12 @@ function submitNewCard() {
             // Writing the result to a variable
             let responseObj = request.response;
 
+            // Если 
+            if (responseObj[0] == 'overload') {
+                alert(`Достигнуто максимальное количество карточек`);
+                return;
+            }
+
             if (responseObj) {
 
                 let newCardId = responseObj;
