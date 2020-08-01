@@ -22,98 +22,101 @@
 
 @section('rightArea')
 
-<div id="rightArea">
+<!-- Меню настроек -->
+<div class="row no-gutters p-0 text-center" id="menuOptions">
+    <div class="search col-12 col-sm-6 col-xl-5 order-12 order-sm-4 order-xl-1">
+        <select id="fastSelectOriginal" size="1" class="fastSelect form-control rounded-0">
+            <option class="selectElementsOriginal" value="Select">Select</option>
+        </select>
+    
+        <select id="fastSelectTranslation" size="1" class="fastSelect form-control rounded-0" style="display: none">
+            <option class="selectElementsTranslation" value="Select">Выбрать</option>
+        </select>
+    </div>
 
-    <!-- Меню настроек -->
-    <div id="menuOptions">
-        <div id="search" class="top_menu">
-            <select id="fastSelectOriginal" size="1" class="fastSelect">
-                <option class="selectElementsOriginal" value="Select">Select</option>
-            </select>
-            <select id="fastSelectTranslation" size="1" class="fastSelect" style="display: none">
-                <option class="selectElementsTranslation" value="Select">Выбрать</option>
-            </select>
+    <div id="front_side_activation" class="set_active_side col-6 col-sm-3 col-xl-2 order-4 order-sm-5 order-xl-2">
+        <a class="top_menu_btn">FRONT SIDE</a>
+    </div>
+
+    <div id="back_side_activation" class="set_active_side col-6 col-sm-3 col-xl-2 order-5 order-sm-6  order-xl-3">
+        <a class="top_menu_btn">BACK SIDE</a>
+    </div>
+
+    <div id="addCard" class="col-4 col-xl-1 order-1 order-xl-4">
+        <a class="top_menu_btn">ADD</a>
+    </div>
+
+    <div id="editCard" class="col-4 col-xl-1 order-2 order-xl-5">
+        <a class="top_menu_btn">EDIT</a>
+    </div>
+
+    <div id="deleteCard" class="col-4 col-xl-1 order-3 order-xl-6">
+        <a class="top_menu_btn">DELETE</a>
+    </div>
+
+</div>
+
+<div id="workArea">
+    <div id="back" class="navigation">
+        <p>BACK</p>
+    </div>
+    <div id="active_stack" class="cards">
+
+        <div id="move-card-up" class="move"></div>
+        <div id="move-card-down" class="move"></div>
+
+        <div id="original_side">
+            <div class="wrap_inf_card">
+                <div id="original_div">
+                    <p id="original"></p>
+                </div>
+                <div id="original_comment_div">
+                    <p id="original_comment"></p>
+                </div>
+            </div>
         </div>
-        <div id="front_side_activation" class="top_menu set_active_side">
-            <p class="buttons-row">FRONT SIDE</p>
-        </div>
-        <div id="back_side_activation" class="top_menu set_active_side">
-            <p class="buttons-row">BACK SIDE</p>
-        </div>
-        <div id="addCard" class="top_menu">
-            <p class="buttons-row">ADD</p>
-        </div>
-        <div id="editCard" class="top_menu">
-            <p class="buttons-row">EDIT</p>
-        </div>
-        <div id="deleteCard" class="top_menu">
-            <p class="buttons-row">DELETE</p>
+        <div id="translation_side" style="display: none">
+            <div class="wrap_inf_card">
+                <div id="translation_div">
+                    <p id="translation"></p>
+                </div>
+                <div id="translation_comment_div">
+                    <p id="translation_comment"></p>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Конец меню настроек -->
 
-    <div id="workArea">
-        <div id="back" class="navigation">
-            <p>BACK</p>
-        </div>
-        <div id="active_stack" class="cards">
-
-            <div id="move-card-up" class="move"></div>
-            <div id="move-card-down" class="move"></div>
-
-            <div id="original_side">
-                <div class="wrap_inf_card">
-                    <div id="original_div">
-                        <p id="original"></p>
-                    </div>
-                    <div id="original_comment_div">
-                        <p id="original_comment"></p>
-                    </div>
-                </div>
+    <div id="form_add_card" class="cards">
+        <div id="orig-part-form">
+            <div class="input-new-card flex-form-part"><label for="input-orig">Оriginal: </label>
+                <input type="text" id="input-orig" name="input-orig" placeholder="required" maxlength="30">
             </div>
-            <div id="translation_side" style="display: none">
-                <div class="wrap_inf_card">
-                    <div id="translation_div">
-                        <p id="translation"></p>
-                    </div>
-                    <div id="translation_comment_div">
-                        <p id="translation_comment"></p>
-                    </div>
-                </div>
+            <div class="input-new-card">
+                <textarea id="input-orig-comment" name="input-orig-comment" placeholder="Comment (optional)" rows="2" maxlength="80"></textarea>
             </div>
         </div>
-
-        <div id="form_add_card" class="cards">
-            <div id="orig-part-form">
-                <div class="input-new-card flex-form-part"><label for="input-orig">Оriginal: </label>
-                    <input type="text" id="input-orig" name="input-orig" placeholder="required" maxlength="30">
-                </div>
-                <div class="input-new-card">
-                    <textarea id="input-orig-comment" name="input-orig-comment" placeholder="Comment (optional)" rows="2" maxlength="80"></textarea>
-                </div>
+        <div id="transl-part-form">
+            <div class="input-new-card flex-form-part"><label for="input-transl">Translation: </label>
+                <input type="text" id="input-transl" name="input-transl" placeholder="required" maxlength="30">
             </div>
-            <div id="transl-part-form">
-                <div class="input-new-card flex-form-part"><label for="input-transl">Translation: </label>
-                    <input type="text" id="input-transl" name="input-transl" placeholder="required" maxlength="30">
-                </div>
-                <div class="input-new-card">
-                    <textarea id="input-transl-comment" name="input-transl-comment" placeholder="Comment (optional)" rows="2" maxlength="80"></textarea>
-                </div>
+            <div class="input-new-card">
+                <textarea id="input-transl-comment" name="input-transl-comment" placeholder="Comment (optional)" rows="2" maxlength="80"></textarea>
             </div>
-            <div class="input-new-card" id="add-select-stack-div">
-                <p style="margin-bottom: 5px;">Choose a stack</p>
-                <select id="select-new-card-stack" size="1" name="select-new-card-stack">
-                    <option value="1">New word</option>
-                    <option value="2">To study</option>
-                    <option value="3">Already know</option>
-                </select>
-            </div>
-            <button class="form-button add-or-edit" type="button" value="Save">
-                Save</button>
         </div>
-        <div id="forward" class="navigation">
-            <p>FORWARD</p>
+        <div class="input-new-card" id="add-select-stack-div">
+            <p style="margin-bottom: 5px;">Choose a stack</p>
+            <select id="select-new-card-stack" size="1" name="select-new-card-stack">
+                <option value="1">New word</option>
+                <option value="2">To study</option>
+                <option value="3">Already know</option>
+            </select>
         </div>
+        <button class="form-button add-or-edit" type="button" value="Save">
+            Save</button>
+    </div>
+    <div id="forward" class="navigation">
+        <p>FORWARD</p>
     </div>
 </div>
 
