@@ -1,18 +1,22 @@
 @extends('layouts.main')
 
 @section('leftArea')
-<div class="row justify-content-center">
-    <div class="col-10 col-md-8">
+<div class="row justify-content-center no-gutters mt-5 mb-5">
+
+    <div class="col-7 col-sm-6 col-md-10 col-lg-8 col=xl-7 m-auto p-0">
         <div id="stack_1" class="cards stack_switch">
             <p>stack_1</p>
         </div>
-        <div id="stack_2" class="cards stack_switch">
+
+        <div id="stack_2" class="cards stack_switch mt-4">
             <p>stack_2</p>
         </div>
-        <div id="stack_3" class="cards stack_switch">
+
+        <div id="stack_3" class="cards stack_switch mt-4">
             <p>stack_3</p>
         </div>
     </div>
+
 </div>
 @endsection
 
